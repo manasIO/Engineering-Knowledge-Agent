@@ -1,0 +1,129 @@
+Local vs hosted LLM
+
+A local LLM runs inference on your Mac:
+Your Mac
+┌─────────────────────────┐
+│ App                     │
+│ ↓                       │
+│ Llama / Mistral / etc.  │
+│ ↓                       │
+│ Answer                  │
+└─────────────────────────┘
+
+Hosted Model 
+Your Mac                         Cloud
+┌──────────────┐             ┌───────────────┐
+│ Your RAG app │ ── HTTPS ─► │ LLM           │
+│              │ ◄────────── │ inference     │
+└──────────────┘             └───────────────┘
+
+
+What is inference?
+
+Training is when a model learns its parameters.
+
+Inference is when an already-trained model is used to produce an output.
+
+Tokens
+LLMs don't fundamentally process text as words. They process tokens. 
+gets tokenized into a sequence of pieces. Tokens may correspond to whole words, parts of words, punctuation, etc.
+
+Context window
+Every LLM has a maximum amount of context it can process in a request.
+┌──────────── Context Window ──────────────┐
+│ System instructions                     │
+│                                         │
+│ Retrieved documentation                 │
+│                                         │
+│ Conversation history                    │
+│                                         │
+│ User question                           │
+│                                         │
+│ Generated response                      │
+└─────────────────────────────────────────┘
+
+Temperature: it controls how deterministic versus varied generation is.
+
+NEXT STEPS: 
+
+Local                              Google
+────────────────────────────────────────────────
+Question
+   ↓
+MiniLM embedding
+   ↓
+ChromaDB
+   ↓
+Top-3 chunks
+   ↓
+Construct RAG prompt
+   │
+   └──── HTTPS ────────────────► Gemini API
+                                      ↓
+                                    LLM
+                                      ↓
+Answer ◄──────────────────────────────┘
+
+TEST CALL TO GEMINI: 
+
+Your Python program
+
+        │
+        │  HTTPS request
+        │
+        │  Authentication: API key
+        │
+        │  JSON:
+        │  {
+        │      model: "...",
+        │      contents: "Explain what an API is..."
+        │  }
+        ▼
+
+Gemini API server
+
+        │
+        ▼
+
+Gemini model inference
+
+        │
+        │ generated tokens
+        ▼
+
+Gemini API
+
+        │
+        │ HTTPS response
+        │ JSON response
+        ▼
+
+Python SDK
+
+        │
+        ▼
+
+response object
+
+        │
+        ▼
+
+response.text
+
+
+             OUR FIRST RAG PIPELINE
+
+Question
+   │
+   ├──────────────► embedding
+   │                    ↓
+   │                 Chroma
+   │                    ↓
+   │              relevant chunks
+   │                    │
+   ▼                    ▼
+        prompt construction
+                 ↓
+              Gemini
+                 ↓
+              Answer

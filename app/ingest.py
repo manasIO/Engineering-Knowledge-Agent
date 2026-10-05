@@ -64,6 +64,9 @@ for file_path in document_files:
 
     for index, chunk in enumerate(chunks):
 
+        print(f"\n---- CHUNK {index}-----")
+        print(chunk)
+
         documents.append(chunk)
 
         metadatas.append({
