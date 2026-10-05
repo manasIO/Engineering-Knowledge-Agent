@@ -32,17 +32,15 @@ collection = client.get_or_create_collection(
 #------------------------
 
 def chunk_text(text: str, chunk_size: int = 500, overlap: int = 100):
+    sections = text.split("\n\n")
+
     chunks = []
 
-    start = 0
-    while start < len(text):
-        end = start + chunk_size
-        chunk = text[start:end].strip()
+    for section in sections:
+        section = section.strip()
 
-        if chunk:
-            chunks.append(chunk)
-
-        start += chunk_size - overlap
+        if section:
+            chunks.append(section)
 
     return chunks
 
