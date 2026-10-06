@@ -16,15 +16,17 @@ collection = client.get_collection(
     name="engineering_docs"
 )
 
-def search(query: str, top_k: int = 3):
+def retrieve(question: str, top_k: int = 3):
 
-    query_embedding = model.encode(
-        [query],
-        normalize_embeddings=True
-    )[0]
+    query_embedding = model.encode(question).tolist()
+    
+    # query_embedding = model.encode(
+    #     [query],
+    #     normalize_embeddings=True
+    # )[0]
 
     results = collection.query(
-        query_embeddings=[query_embedding.tolist()],
+        query_embeddings=[query_embedding],
         n_results=top_k
     )
 
@@ -38,7 +40,7 @@ if __name__ == "__main__":
 
     question = input("\n Ask a question: ")
 
-    results = search(question)
+    results = retrieve(question)
 
     print("\n ---Retrieved Documents ---\n")
 

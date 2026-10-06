@@ -127,3 +127,29 @@ Question
               Gemini
                  ↓
               Answer
+
+FINAL PIPELINE: 
+                  RAG v1
+
+                User question
+                    │
+                    ▼
+                MiniLM embedding
+                    │
+                    ▼
+                ChromaDB
+                    │
+                    ▼
+                Top 3 chunks
+                    │
+                    ▼
+                Context construction
+                    │
+                    ▼
+                Prompt
+                    │
+                    ▼
+                Gemini API
+                    │
+                    ▼
+                Grounded answer
