@@ -1,0 +1,410 @@
+[
+  {
+    "question": "How should API endpoints represent resources and actions?",
+    "expected_source": "api_standards.txt",
+    "expected_section": "Resource Design"
+  },
+  {
+    "question": "What should API error responses avoid revealing?",
+    "expected_source": "api_standards.txt",
+    "expected_section": "Errors"
+  },
+  {
+    "question": "Which HTTP methods should be used for creating, replacing, and partially updating resources?",
+    "expected_source": "api_standards.txt",
+    "expected_section": "HTTP Methods and Status Codes"
+  },
+  {
+    "question": "What format and conventions should API request and response bodies follow?",
+    "expected_source": "api_standards.txt",
+    "expected_section": "Request and Response Formats"
+  },
+  {
+    "question": "How should APIs handle large collection results and rate limits?",
+    "expected_source": "api_standards.txt",
+    "expected_section": "Pagination and Rate Limits"
+  },
+  {
+    "question": "What automated checks are typically run for every proposed change?",
+    "relevant_sections": [
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Continuous Integration"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Security and Quality Gates"
+      }
+    ]
+  },
+  {
+    "question": "How should deployable artifacts move between environments?",
+    "relevant_sections": [
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Build Artifacts"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Environment Promotion"
+      }
+    ]
+  },
+  {
+    "question": "What types of tests should a pipeline include?",
+    "expected_source": "ci_cd_guide.txt",
+    "expected_section": "Test Stages"
+  },
+  {
+    "question": "Which security checks should be included in CI/CD quality gates?",
+    "expected_source": "ci_cd_guide.txt",
+    "expected_section": "Security and Quality Gates"
+  },
+  {
+    "question": "What are rolling, blue-green, and canary deployment strategies?",
+    "expected_source": "ci_cd_guide.txt",
+    "expected_section": "Deployment Strategies"
+  },
+  {
+    "question": "What should engineers monitor after deployment?",
+    "relevant_sections": [
+      {
+        "source": "deployment_guide.txt",
+        "section": "Monitoring"
+      },
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Deployment Verification"
+      }
+    ]
+  },
+  {
+    "question": "What checks must pass before a release?",
+    "relevant_sections": [
+      {
+        "source": "deployment_guide.txt",
+        "section": "Build Validation"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Continuous Integration"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Security and Quality Gates"
+      }
+    ]
+  },
+  {
+    "question": "Which pipeline is used to deploy the application?",
+    "relevant_sections": [
+      {
+        "source": "deployment_guide.txt",
+        "section": "Deployment Process"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Environment Promotion"
+      }
+    ]
+  },
+  {
+    "question": "How should engineers recover if a deployment causes a production issue?",
+    "relevant_sections": [
+      {
+        "source": "deployment_guide.txt",
+        "section": "Rollback Procedure"
+      },
+      {
+        "source": "release_management.txt",
+        "section": "Rollback and Forward Fixes"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Recovery and Continuous Improvement"
+      }
+    ]
+  },
+  {
+    "question": "What should engineers do if errors rise significantly after deployment?",
+    "relevant_sections": [
+      {
+        "source": "deployment_guide.txt",
+        "section": "Incident Response"
+      },
+      {
+        "source": "incident_response.txt",
+        "section": "Detect and Declare"
+      },
+      {
+        "source": "incident_response.txt",
+        "section": "Mitigate Safely"
+      }
+    ]
+  },
+  {
+    "question": "What information should be recorded when declaring an incident?",
+    "relevant_sections": [
+      {
+        "source": "incident_response.txt",
+        "section": "Detect and Declare"
+      },
+      {
+        "source": "troubleshooting_guide.txt",
+        "section": "Start with the Symptom"
+      }
+    ]
+  },
+  {
+    "question": "What should incident responders prioritize during mitigation?",
+    "expected_source": "incident_response.txt",
+    "expected_section": "Mitigate Safely"
+  },
+  {
+    "question": "Which roles should be assigned during a significant incident?",
+    "expected_source": "incident_response.txt",
+    "expected_section": "Establish Coordination"
+  },
+  {
+    "question": "What information should incident updates communicate?",
+    "expected_source": "incident_response.txt",
+    "expected_section": "Communicate"
+  },
+  {
+    "question": "What should a blameless after-action review cover?",
+    "expected_source": "incident_response.txt",
+    "expected_section": "After-Action Review"
+  },
+  {
+    "question": "Which service-level indicators are commonly useful for monitoring?",
+    "relevant_sections": [
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Service Indicators"
+      },
+      {
+        "source": "deployment_guide.txt",
+        "section": "Monitoring"
+      }
+    ]
+  },
+  {
+    "question": "What makes an alert actionable?",
+    "expected_source": "monitoring_guide.txt",
+    "expected_section": "Alert Design"
+  },
+  {
+    "question": "What is an error budget, and how can teams use it?",
+    "relevant_sections": [
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Service Objectives"
+      },
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Alert Design"
+      }
+    ]
+  },
+  {
+    "question": "How do metrics, logs, and traces support service monitoring?",
+    "expected_source": "monitoring_guide.txt",
+    "expected_section": "Metrics, Logs, and Traces"
+  },
+  {
+    "question": "Which dependency and capacity signals should teams monitor?",
+    "relevant_sections": [
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Dependency and Capacity Monitoring"
+      },
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Service Indicators"
+      }
+    ]
+  },
+  {
+    "question": "What should teams confirm before a release?",
+    "relevant_sections": [
+      {
+        "source": "release_management.txt",
+        "section": "Release Readiness"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Continuous Integration"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Security and Quality Gates"
+      }
+    ]
+  },
+  {
+    "question": "What should release notes summarize?",
+    "expected_source": "release_management.txt",
+    "expected_section": "Versioning and Release Notes"
+  },
+  {
+    "question": "What factors should determine the risk classification of a change?",
+    "expected_source": "release_management.txt",
+    "expected_section": "Change Classification"
+  },
+  {
+    "question": "What should teams do if predefined failure conditions occur during a rollout?",
+    "relevant_sections": [
+      {
+        "source": "release_management.txt",
+        "section": "Release Execution"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Deployment Strategies"
+      },
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Deployment Verification"
+      }
+    ]
+  },
+  {
+    "question": "When might a forward fix be safer than rolling back?",
+    "relevant_sections": [
+      {
+        "source": "release_management.txt",
+        "section": "Rollback and Forward Fixes"
+      },
+      {
+        "source": "deployment_guide.txt",
+        "section": "Rollback Procedure"
+      }
+    ]
+  },
+  {
+    "question": "How should service access be granted and managed?",
+    "relevant_sections": [
+      {
+        "source": "security_guidelines.txt",
+        "section": "Identity and Access"
+      },
+      {
+        "source": "api_standards.txt",
+        "section": "Authentication, Authorization, and Data Handling"
+      }
+    ]
+  },
+  {
+    "question": "Where should credentials be stored, and how should access to them be limited?",
+    "relevant_sections": [
+      {
+        "source": "security_guidelines.txt",
+        "section": "Secrets and Credentials"
+      },
+      {
+        "source": "api_standards.txt",
+        "section": "Authentication, Authorization, and Data Handling"
+      }
+    ]
+  },
+  {
+    "question": "How should applications validate untrusted input and handle database queries?",
+    "relevant_sections": [
+      {
+        "source": "security_guidelines.txt",
+        "section": "Input Validation and Output Handling"
+      },
+      {
+        "source": "api_standards.txt",
+        "section": "Request and Response Formats"
+      }
+    ]
+  },
+  {
+    "question": "What practices help protect sensitive data?",
+    "relevant_sections": [
+      {
+        "source": "security_guidelines.txt",
+        "section": "Data Protection"
+      },
+      {
+        "source": "api_standards.txt",
+        "section": "Authentication, Authorization, and Data Handling"
+      }
+    ]
+  },
+  {
+    "question": "How should teams manage software dependencies and build supply-chain risks?",
+    "relevant_sections": [
+      {
+        "source": "security_guidelines.txt",
+        "section": "Dependencies and Supply Chain"
+      },
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Build Artifacts"
+      }
+    ]
+  },
+  {
+    "question": "What information is useful to capture when reporting a service problem?",
+    "relevant_sections": [
+      {
+        "source": "troubleshooting_guide.txt",
+        "section": "Start with the Symptom"
+      },
+      {
+        "source": "incident_response.txt",
+        "section": "Detect and Declare"
+      }
+    ]
+  },
+  {
+    "question": "What should responders do when a recent change appears related to an incident?",
+    "relevant_sections": [
+      {
+        "source": "troubleshooting_guide.txt",
+        "section": "Check Recent Changes"
+      },
+      {
+        "source": "release_management.txt",
+        "section": "Rollback and Forward Fixes"
+      },
+      {
+        "source": "deployment_guide.txt",
+        "section": "Rollback Procedure"
+      }
+    ]
+  },
+  {
+    "question": "Which operational signals can help diagnose service problems?",
+    "relevant_sections": [
+      {
+        "source": "troubleshooting_guide.txt",
+        "section": "Use Operational Signals"
+      },
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Service Indicators"
+      },
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Metrics, Logs, and Traces"
+      },
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Dependency and Capacity Monitoring"
+      }
+    ]
+  },
+  {
+    "question": "How should engineers test troubleshooting hypotheses?",
+    "expected_source": "troubleshooting_guide.txt",
+    "expected_section": "Form and Test Hypotheses"
+  },
+  {
+    "question": "What are possible causes of authentication failures?",
+    "expected_source": "troubleshooting_guide.txt",
+    "expected_section": "Common Symptom Patterns"
+  }
+]

@@ -1,0 +1,47 @@
+NEXT STEPS: 
+
+BUILDING AN EVALUATION FRAMEWORK
+
+we wanna build this 
+                 Retrieval System
+
+                50 known questions
+                    │
+                    ▼
+                    retrieve()
+                    │
+                    ▼
+                predicted chunks
+                    │
+                    ▼
+                compare against
+                expected chunks
+                    │
+                    ▼
+                ┌──────────────────────┐
+                │ Recall@1 = 84%       │
+                │ Recall@3 = 96%       │
+                │ MRR      = 0.89      │
+                │ Avg latency = 42 ms  │
+                └──────────────────────┘
+
+Chroma record
+┌──────────────────────────────┐
+│ ID                           │
+│ deployment_guide_3           │
+├──────────────────────────────┤
+│ Embedding                    │
+│ [0.021, -0.183, ...]         │
+├──────────────────────────────┤
+│ Document                     │
+│ 3. Rollback Procedure...     │
+├──────────────────────────────┤
+│ Metadata                     │
+│ source: deployment_guide.txt │
+│ section: Rollback Procedure  │
+│ section_number: 3            │
+└──────────────────────────────┘
+
+NEXT STEPS: 
+
+>> Update metadata to include 'sections' and work on evaluation_retrieval.py

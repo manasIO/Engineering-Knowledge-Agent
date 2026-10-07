@@ -1,4 +1,5 @@
 from pathlib import Path 
+import re
 
 import chromadb
 from sentence_transformers import SentenceTransformer
@@ -32,7 +33,7 @@ collection = client.get_or_create_collection(
 #------------------------
 
 def chunk_text(text: str, chunk_size: int = 500, overlap: int = 100):
-    sections = text.split("\n\n")
+    sections = re.split(r"\n(?=\d+\.\s)", text)
 
     chunks = []
 
@@ -56,7 +57,7 @@ print(f"Found {len(document_files)} document(s).")
 
 for file_path in document_files:
 
-    print(f"Processing: {file_path.name}")
+    print(f"\n\n Processing: {file_path.name}")
 
     text = file_path.read_text(encoding="utf-8")
 
@@ -64,8 +65,8 @@ for file_path in document_files:
 
     for index, chunk in enumerate(chunks):
 
-        print(f"\n---- CHUNK {index}-----")
-        print(chunk)
+        #print(f"\n---- CHUNK {index}-----")
+        #print(chunk)
 
         documents.append(chunk)
 
@@ -77,7 +78,7 @@ for file_path in document_files:
         ids.append(
             f"{file_path.stem}-chunk-{index}"
         )
-
+    print(f"Total Chunk Count: {len(chunks)}")
 
 # Generate embeddings 
 #----------------------
