@@ -32,6 +32,13 @@ collection = client.get_or_create_collection(
 # Simple text chunking
 #------------------------
 
+def extract_section(chunk: str) -> str:
+    match = re.search(r"^(\d+\.\s*.*)", chunk, flags=re.MULTILINE)
+    if match:
+        return match.group(1).strip()
+    return "overview"
+
+
 def chunk_text(text: str, chunk_size: int = 500, overlap: int = 100):
     sections = re.split(r"\n(?=\d+\.\s)", text)
 
@@ -72,7 +79,8 @@ for file_path in document_files:
 
         metadatas.append({
             "source": file_path.name,
-            "chunk": index
+            "chunk": index,
+            "section": extract_section(chunk)
         })
 
         ids.append(
