@@ -33,7 +33,7 @@ collection = client.get_or_create_collection(
 #------------------------
 
 def extract_section(chunk: str) -> str:
-    match = re.search(r"^(\d+\.\s*.*)", chunk, flags=re.MULTILINE)
+    match = re.search(r"^\d+\.\s*(.*)", chunk, flags=re.MULTILINE)
     if match:
         return match.group(1).strip()
     return "overview"

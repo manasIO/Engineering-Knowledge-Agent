@@ -1,30 +1,56 @@
 [
   {
+    "id": "Q001",
+    "question": "What should engineers monitor after deployment?",
+    "relevant_sections": [
+      {
+        "source": "deployment_guide.txt",
+        "section": "Monitoring"
+      }
+    ]
+  },
+  {
+    "id": "Q002",
+    "question": "What checks must pass before deployment?",
+    "relevant_sections": [
+      {
+        "source": "deployment_guide.txt",
+        "section": "Build Validation"
+      }
+    ]
+  },
+  {
+    "id": "Q003",
     "question": "How should API endpoints represent resources and actions?",
     "expected_source": "api_standards.txt",
     "expected_section": "Resource Design"
   },
   {
+    "id": "Q004",
     "question": "What should API error responses avoid revealing?",
     "expected_source": "api_standards.txt",
     "expected_section": "Errors"
   },
   {
+    "id": "Q005",
     "question": "Which HTTP methods should be used for creating, replacing, and partially updating resources?",
     "expected_source": "api_standards.txt",
     "expected_section": "HTTP Methods and Status Codes"
   },
   {
+    "id": "Q006",
     "question": "What format and conventions should API request and response bodies follow?",
     "expected_source": "api_standards.txt",
     "expected_section": "Request and Response Formats"
   },
   {
+    "id": "Q007",
     "question": "How should APIs handle large collection results and rate limits?",
     "expected_source": "api_standards.txt",
     "expected_section": "Pagination and Rate Limits"
   },
   {
+    "id": "Q008",
     "question": "What automated checks are typically run for every proposed change?",
     "relevant_sections": [
       {
@@ -38,6 +64,7 @@
     ]
   },
   {
+    "id": "Q009",
     "question": "How should deployable artifacts move between environments?",
     "relevant_sections": [
       {
@@ -51,21 +78,25 @@
     ]
   },
   {
+    "id": "Q010",
     "question": "What types of tests should a pipeline include?",
     "expected_source": "ci_cd_guide.txt",
     "expected_section": "Test Stages"
   },
   {
+    "id": "Q011",
     "question": "Which security checks should be included in CI/CD quality gates?",
     "expected_source": "ci_cd_guide.txt",
     "expected_section": "Security and Quality Gates"
   },
   {
+    "id": "Q012",
     "question": "What are rolling, blue-green, and canary deployment strategies?",
     "expected_source": "ci_cd_guide.txt",
     "expected_section": "Deployment Strategies"
   },
   {
+    "id": "Q013",
     "question": "What should engineers monitor after deployment?",
     "relevant_sections": [
       {
@@ -79,6 +110,7 @@
     ]
   },
   {
+    "id": "Q014",
     "question": "What checks must pass before a release?",
     "relevant_sections": [
       {
@@ -96,6 +128,7 @@
     ]
   },
   {
+    "id": "Q015",
     "question": "Which pipeline is used to deploy the application?",
     "relevant_sections": [
       {
@@ -109,6 +142,7 @@
     ]
   },
   {
+    "id": "Q016",
     "question": "How should engineers recover if a deployment causes a production issue?",
     "relevant_sections": [
       {
@@ -126,6 +160,7 @@
     ]
   },
   {
+    "id": "Q017",
     "question": "What should engineers do if errors rise significantly after deployment?",
     "relevant_sections": [
       {
@@ -143,6 +178,7 @@
     ]
   },
   {
+    "id": "Q018",
     "question": "What information should be recorded when declaring an incident?",
     "relevant_sections": [
       {
@@ -156,26 +192,31 @@
     ]
   },
   {
+    "id": "Q019",
     "question": "What should incident responders prioritize during mitigation?",
     "expected_source": "incident_response.txt",
     "expected_section": "Mitigate Safely"
   },
   {
+    "id": "Q020",
     "question": "Which roles should be assigned during a significant incident?",
     "expected_source": "incident_response.txt",
     "expected_section": "Establish Coordination"
   },
   {
+    "id": "Q021",
     "question": "What information should incident updates communicate?",
     "expected_source": "incident_response.txt",
     "expected_section": "Communicate"
   },
   {
+    "id": "Q022",
     "question": "What should a blameless after-action review cover?",
     "expected_source": "incident_response.txt",
     "expected_section": "After-Action Review"
   },
   {
+    "id": "Q023",
     "question": "Which service-level indicators are commonly useful for monitoring?",
     "relevant_sections": [
       {
@@ -189,11 +230,13 @@
     ]
   },
   {
+    "id": "Q024",
     "question": "What makes an alert actionable?",
     "expected_source": "monitoring_guide.txt",
     "expected_section": "Alert Design"
   },
   {
+    "id": "Q025",
     "question": "What is an error budget, and how can teams use it?",
     "relevant_sections": [
       {
@@ -207,11 +250,13 @@
     ]
   },
   {
+    "id": "Q026",
     "question": "How do metrics, logs, and traces support service monitoring?",
     "expected_source": "monitoring_guide.txt",
     "expected_section": "Metrics, Logs, and Traces"
   },
   {
+    "id": "Q027",
     "question": "Which dependency and capacity signals should teams monitor?",
     "relevant_sections": [
       {
@@ -225,6 +270,7 @@
     ]
   },
   {
+    "id": "Q028",
     "question": "What should teams confirm before a release?",
     "relevant_sections": [
       {
@@ -242,16 +288,19 @@
     ]
   },
   {
+    "id": "Q029",
     "question": "What should release notes summarize?",
     "expected_source": "release_management.txt",
     "expected_section": "Versioning and Release Notes"
   },
   {
+    "id": "Q030",
     "question": "What factors should determine the risk classification of a change?",
     "expected_source": "release_management.txt",
     "expected_section": "Change Classification"
   },
   {
+    "id": "Q031",
     "question": "What should teams do if predefined failure conditions occur during a rollout?",
     "relevant_sections": [
       {
@@ -269,6 +318,7 @@
     ]
   },
   {
+    "id": "Q032",
     "question": "When might a forward fix be safer than rolling back?",
     "relevant_sections": [
       {
@@ -282,6 +332,7 @@
     ]
   },
   {
+    "id": "Q033",
     "question": "How should service access be granted and managed?",
     "relevant_sections": [
       {
@@ -295,6 +346,7 @@
     ]
   },
   {
+    "id": "Q034",
     "question": "Where should credentials be stored, and how should access to them be limited?",
     "relevant_sections": [
       {
@@ -308,6 +360,7 @@
     ]
   },
   {
+    "id": "Q035",
     "question": "How should applications validate untrusted input and handle database queries?",
     "relevant_sections": [
       {
@@ -321,6 +374,7 @@
     ]
   },
   {
+    "id": "Q036",
     "question": "What practices help protect sensitive data?",
     "relevant_sections": [
       {
@@ -334,6 +388,7 @@
     ]
   },
   {
+    "id": "Q037",
     "question": "How should teams manage software dependencies and build supply-chain risks?",
     "relevant_sections": [
       {
@@ -347,6 +402,7 @@
     ]
   },
   {
+    "id": "Q038",
     "question": "What information is useful to capture when reporting a service problem?",
     "relevant_sections": [
       {
@@ -360,6 +416,7 @@
     ]
   },
   {
+    "id": "Q039",
     "question": "What should responders do when a recent change appears related to an incident?",
     "relevant_sections": [
       {
@@ -377,6 +434,7 @@
     ]
   },
   {
+    "id": "Q040",
     "question": "Which operational signals can help diagnose service problems?",
     "relevant_sections": [
       {
@@ -398,11 +456,13 @@
     ]
   },
   {
+    "id": "Q041",
     "question": "How should engineers test troubleshooting hypotheses?",
     "expected_source": "troubleshooting_guide.txt",
     "expected_section": "Form and Test Hypotheses"
   },
   {
+    "id": "Q042",
     "question": "What are possible causes of authentication failures?",
     "expected_source": "troubleshooting_guide.txt",
     "expected_section": "Common Symptom Patterns"
