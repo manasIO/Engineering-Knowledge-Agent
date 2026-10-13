@@ -41,6 +41,68 @@ def evaluate_ranking(metadatas, relevant_sections):
                             else 0)
     }
 
+# Individual metrics for each question
+evaluation_results = []
+for item in questions:
+    question = item["question"]
+    excepted = item["relevant_sections"]
+
+    start_time = time.perf_counter()
+
+    results = retrieve(question, top_k=3)
+
+    latency_ms = (time.perf_counter() - start_time) * 1000
+
+    metadatas = results["metadatas"][0]
+
+    metrics = evaluate_ranking(metadatas, excepted)
+
+    evaluation_results.append({
+        "id": item["id"],
+        "question": question,
+        "expected": excepted,
+        "retrieved": metadatas,
+        "latency_ms": latency_ms,
+        **metrics
+    })
+
+# Calculating aggregate metrics
+total = len(evaluation_results)
+
+if total == 0:
+    raise ValueError("No evaluation questions found.")
+
+hit_at_1 = sum(r["hit_at_1"] for r in evaluation_results) / total
+hit_at_3 = sum(r["hit_at_3"] for r in evaluation_results) / total
+mrr = sum(r["reciprocal_rank"] for r in evaluation_results) / total
+
+avg_latency = sum(r["latency_ms"] for r in evaluation_results) / total
+
+print("\n===== RETRIEVAL EVALUATION =====")
+print(f"Total Questions: {total}")
+print(f"Hit@1:           {hit_at_1:.3f}")
+print(f"Hit@3:           {hit_at_3:.3f}")
+print(f"MRR@3:           {mrr:.3f}")
+print(f"Avg Latency:     {avg_latency:.2f} ms")
+
+
+# Printing failure questions
+print("\n===== FAILED TOP-1 QUESTIONS =====")
+
+for result in evaluation_results:
+    if result["hit_at_1"] == 0:
+        print(f"\nID: {result['id']}")
+        print(f"Question: {result['question']}")
+        print(f"Expected: {result['expected']}")
+
+        for rank, metadata in enumerate(result["retrieved"], start=1):
+            print(
+                f"  Rank {rank}: "
+                f"{metadata.get('source')} / "
+                f"{metadata.get('section')}"
+            )
+
+
 # test_results = [
 #     {"source": "other.txt", "section": "Overview"},
 #     {"source": "deployment_guide.txt", "section": "Monitoring"},
@@ -52,18 +114,20 @@ def evaluate_ranking(metadatas, relevant_sections):
 # ]
 # print(evaluate_ranking(test_results, expected))
 
-question_data = questions[0]
 
-question = question_data["question"]
-excepted = question_data["relevant_sections"]
+# TESTING RETRIEVAL
+# question_data = questions[0]
 
-results = retrieve(question, top_k=3)
+# question = question_data["question"]
+# excepted = question_data["relevant_sections"]
 
-metadatas = results["metadatas"][0]
+# results = retrieve(question, top_k=3)
 
-metrics = evaluate_ranking(metadatas, excepted)
+# metadatas = results["metadatas"][0]
 
-print("\nQuestion: ", question)
-print("Expected: ", excepted)
-print("Retrieved: ", metadatas)
-print("Metrics: ", metrics)
+# metrics = evaluate_ranking(metadatas, excepted)
+
+# print("\nQuestion: ", question)
+# print("Expected: ", excepted)
+# print("Retrieved: ", metadatas)
+# print("Metrics: ", metrics)

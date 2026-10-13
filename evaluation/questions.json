@@ -22,32 +22,52 @@
   {
     "id": "Q003",
     "question": "How should API endpoints represent resources and actions?",
-    "expected_source": "api_standards.txt",
-    "expected_section": "Resource Design"
+    "relevant_sections": [
+      {
+        "source": "api_standards.txt",
+        "section": "Resource Design"
+      }
+    ]
   },
   {
     "id": "Q004",
     "question": "What should API error responses avoid revealing?",
-    "expected_source": "api_standards.txt",
-    "expected_section": "Errors"
+    "relevant_sections": [
+      {
+        "source": "api_standards.txt",
+        "section": "Errors"
+      }
+    ]
   },
   {
     "id": "Q005",
     "question": "Which HTTP methods should be used for creating, replacing, and partially updating resources?",
-    "expected_source": "api_standards.txt",
-    "expected_section": "HTTP Methods and Status Codes"
+    "relevant_sections": [
+      {
+        "source": "api_standards.txt",
+        "section": "HTTP Methods and Status Codes"
+      }
+    ]
   },
   {
     "id": "Q006",
     "question": "What format and conventions should API request and response bodies follow?",
-    "expected_source": "api_standards.txt",
-    "expected_section": "Request and Response Formats"
+    "relevant_sections": [
+      {
+        "source": "api_standards.txt",
+        "section": "Request and Response Formats"
+      }
+    ]
   },
   {
     "id": "Q007",
     "question": "How should APIs handle large collection results and rate limits?",
-    "expected_source": "api_standards.txt",
-    "expected_section": "Pagination and Rate Limits"
+    "relevant_sections": [
+      {
+        "source": "api_standards.txt",
+        "section": "Pagination and Rate Limits"
+      }
+    ]
   },
   {
     "id": "Q008",
@@ -80,20 +100,32 @@
   {
     "id": "Q010",
     "question": "What types of tests should a pipeline include?",
-    "expected_source": "ci_cd_guide.txt",
-    "expected_section": "Test Stages"
+    "relevant_sections": [
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Test Stages"
+      }
+    ]
   },
   {
     "id": "Q011",
     "question": "Which security checks should be included in CI/CD quality gates?",
-    "expected_source": "ci_cd_guide.txt",
-    "expected_section": "Security and Quality Gates"
+    "relevant_sections": [
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Security and Quality Gates"
+      }
+    ]
   },
   {
     "id": "Q012",
     "question": "What are rolling, blue-green, and canary deployment strategies?",
-    "expected_source": "ci_cd_guide.txt",
-    "expected_section": "Deployment Strategies"
+    "relevant_sections": [
+      {
+        "source": "ci_cd_guide.txt",
+        "section": "Deployment Strategies"
+      }
+    ]
   },
   {
     "id": "Q013",
@@ -194,26 +226,42 @@
   {
     "id": "Q019",
     "question": "What should incident responders prioritize during mitigation?",
-    "expected_source": "incident_response.txt",
-    "expected_section": "Mitigate Safely"
+    "relevant_sections": [
+      {
+        "source": "incident_response.txt",
+        "section": "Mitigate Safely"
+      }
+    ]
   },
   {
     "id": "Q020",
     "question": "Which roles should be assigned during a significant incident?",
-    "expected_source": "incident_response.txt",
-    "expected_section": "Establish Coordination"
+    "relevant_sections": [
+      {
+        "source": "incident_response.txt",
+        "section": "Establish Coordination"
+      }
+    ]
   },
   {
     "id": "Q021",
     "question": "What information should incident updates communicate?",
-    "expected_source": "incident_response.txt",
-    "expected_section": "Communicate"
+    "relevant_sections": [
+      {
+        "source": "incident_response.txt",
+        "section": "Communicate"
+      }
+    ]
   },
   {
     "id": "Q022",
     "question": "What should a blameless after-action review cover?",
-    "expected_source": "incident_response.txt",
-    "expected_section": "After-Action Review"
+    "relevant_sections": [
+      {
+        "source": "incident_response.txt",
+        "section": "After-Action Review"
+      }
+    ]
   },
   {
     "id": "Q023",
@@ -232,8 +280,12 @@
   {
     "id": "Q024",
     "question": "What makes an alert actionable?",
-    "expected_source": "monitoring_guide.txt",
-    "expected_section": "Alert Design"
+    "relevant_sections": [
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Alert Design"
+      }
+    ]
   },
   {
     "id": "Q025",
@@ -252,8 +304,12 @@
   {
     "id": "Q026",
     "question": "How do metrics, logs, and traces support service monitoring?",
-    "expected_source": "monitoring_guide.txt",
-    "expected_section": "Metrics, Logs, and Traces"
+    "relevant_sections": [
+      {
+        "source": "monitoring_guide.txt",
+        "section": "Metrics, Logs, and Traces"
+      }
+    ]
   },
   {
     "id": "Q027",
@@ -290,14 +346,22 @@
   {
     "id": "Q029",
     "question": "What should release notes summarize?",
-    "expected_source": "release_management.txt",
-    "expected_section": "Versioning and Release Notes"
+    "relevant_sections": [
+      {
+        "source": "release_management.txt",
+        "section": "Versioning and Release Notes"
+      }
+    ]
   },
   {
     "id": "Q030",
     "question": "What factors should determine the risk classification of a change?",
-    "expected_source": "release_management.txt",
-    "expected_section": "Change Classification"
+    "relevant_sections": [
+      {
+        "source": "release_management.txt",
+        "section": "Change Classification"
+      }
+    ]
   },
   {
     "id": "Q031",
@@ -458,13 +522,21 @@
   {
     "id": "Q041",
     "question": "How should engineers test troubleshooting hypotheses?",
-    "expected_source": "troubleshooting_guide.txt",
-    "expected_section": "Form and Test Hypotheses"
+    "relevant_sections": [
+      {
+        "source": "troubleshooting_guide.txt",
+        "section": "Form and Test Hypotheses"
+      }
+    ]
   },
   {
     "id": "Q042",
     "question": "What are possible causes of authentication failures?",
-    "expected_source": "troubleshooting_guide.txt",
-    "expected_section": "Common Symptom Patterns"
+    "relevant_sections": [
+      {
+        "source": "troubleshooting_guide.txt",
+        "section": "Common Symptom Patterns"
+      }
+    ]
   }
 ]

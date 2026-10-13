@@ -72,6 +72,20 @@ The repository uses a lightweight Python-based stack optimized for local experim
 - Optional local inference backends for future/alternative deployment: Ollama, llama.cpp, or custom model wrappers
 - Optional retrieval augmentation patterns aligned with LangChain or LlamaIndex concepts, but implemented here as a minimal, explicit custom pipeline
 
+## Retrieval Evaluation & Initial Benchmark
+
+The initial benchmark consists of 42 question-and-relevance-label pairs in [`evaluation/questions.json`](evaluation/questions.json), identified as `Q001` through `Q042`. These labels were generated and manually reviewed. Each question uses `relevant_sections` as its gold label: one or more expected source-document and section pairs. Treat this file as the reviewed baseline; update labels deliberately when the benchmark is revised.
+
+The first recorded retrieval run achieved **Hit@1 0.833**, **Hit@3 1.000**, and **MRR@3 0.901**, with **46.79 ms** average retrieval latency. See the complete output, including questions that missed at rank one, in [`evaluation/eval1.md`](evaluation/eval1.md).
+
+Run the evaluator from the repository root:
+
+```bash
+python evaluation/evaluate_retrieval.py
+```
+
+The evaluator compares the retrieved top-three chunks against the reviewed labels and prints aggregate Hit@1, Hit@3, MRR@3, average latency, and questions that miss at rank one. Results are generated at run time; preserve each recorded snapshot separately from the static reviewed label baseline.
+
 ## Repository Structure
 
 ```text
@@ -84,7 +98,9 @@ The repository uses a lightweight Python-based stack optimized for local experim
 ├── data/
 │   └── documents/         # source documentation used for RAG ingestion
 ├── chroma_db/             # persistent ChromaDB storage
-├── evaluation/            # validation and assessment artifacts
+├── evaluation/
+│   ├── questions.json     # initial manually reviewed retrieval labels
+│   └── evaluate_retrieval.py
 ├── notes/                 # project notes and working documents
 ├── scripts/               # operational scripts and automation helpers
 ├── tests/                 # project validation tests
