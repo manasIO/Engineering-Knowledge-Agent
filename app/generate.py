@@ -5,6 +5,8 @@ from google import genai
 
 from retrieve import retrieve
 
+from validate import validate_citations
+
 load_dotenv()
 
 api_key = os.getenv("GEMINI_API_KEY")
@@ -65,5 +67,15 @@ response = client.models.generate_content(
     contents=prompt
 )
 
-print("\n--- Answer ---\n")
-print(response.text)
+answer = response.text or ""
+
+validation = validate_citations(
+    answer=answer,
+    source_count=len(documents)
+)
+
+print("\n--- Answer ---")
+print(answer)
+
+print("\n--- Citation Validation ---")
+print(validation)
