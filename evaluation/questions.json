@@ -25,7 +25,7 @@
     "relevant_sections": [
       {
         "source": "api_standards.txt",
-        "section": "Resource Design"
+        "section": "Request and Response Formats"
       }
     ]
   },
@@ -103,7 +103,7 @@
     "relevant_sections": [
       {
         "source": "ci_cd_guide.txt",
-        "section": "Test Stages"
+        "section": "Continuous Integration"
       }
     ]
   },
